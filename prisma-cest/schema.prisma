@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 // Get a free hosted Postgres database in seconds: `npx create-db`
-
+//prisma-cest/schema.prisma
 generator client {
   provider = "prisma-client-js"
   output   = "../node_modules/@cest/client"
@@ -13,34 +13,34 @@ datasource db {
 }
 
 model certificacion {
-  id                 Int
-  nombre             String?
-  paterno            String?
-  materno            String?
-  cedula             String?
-  taller             String?
-  codigo_esfm        Int?
-  esfm               String?
-  departamento       String?
-  lengua_originaria  String?
-  nivel              String?
-  carga_horaria      Int?
-  gestion            Int?
-  fecha_inicio       DateTime?
-  codigo_estudiante  String?
-  taller2            String?
-  valida_datos       Int?
-  cantidad_datos     Int?
-  dato_corregido     Int?
-  tacfi              String?
-  especialidad       String?
-  hoja_ruta          Int?
+  id                Int
+  nombre            String?
+  paterno           String?
+  materno           String?
+  cedula            String?
+  taller            String?
+  codigo_esfm       Int?
+  esfm              String?
+  departamento      String?
+  lengua_originaria String?
+  nivel             String?
+  carga_horaria     Int?
+  gestion           Int?
+  fecha_inicio      DateTime?
+  codigo_estudiante String?
+  taller2           String?
+  valida_datos      Int?
+  cantidad_datos    Int?
+  dato_corregido    Int?
+  tacfi             String?
+  especialidad      String?
+  hoja_ruta         Int?
 
   @@id([id])
 }
 
 model certificacion_persona {
-  cod_pers String @id
+  cod_pers String  @id
   nombre   String?
   paterno  String?
   materno  String?
@@ -48,7 +48,7 @@ model certificacion_persona {
 }
 
 model certificacionTACFI {
-  id                Int @id
+  id                Int       @id
   nombre            String?
   paterno           String?
   materno           String?
@@ -71,7 +71,7 @@ model certificacionTACFI {
 }
 
 model certificacionTCLO {
-  id                Int @id
+  id                Int       @id
   nombre            String?
   paterno           String?
   materno           String?
@@ -92,14 +92,14 @@ model certificacionTCLO {
 }
 
 model esfms {
-  id                 Int @id
-  cod_esfm           Int
-  type_esfm          String?
-  name               String?
-  department_id      Int?
-  created_at         DateTime?
-  updated_at         DateTime?
-  address            String?
-  nombre_cert        String?
-  nombre_cert_tclo   String?
+  id               Int       @id
+  cod_esfm         Int
+  type_esfm        String?
+  name             String?
+  department_id    Int?
+  created_at       DateTime?
+  updated_at       DateTime?
+  address          String?
+  nombre_cert      String?
+  nombre_cert_tclo String?
 }

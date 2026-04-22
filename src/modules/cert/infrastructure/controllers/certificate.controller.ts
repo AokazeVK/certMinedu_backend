@@ -5,6 +5,7 @@ import {
   ParseIntPipe,
   Res,
   StreamableFile,
+  Inject,
 } from '@nestjs/common';
 import type { Response } from 'express';
 import { EmitCertificateUseCase } from '../../application/use-cases/emit-certificate.use-case';
@@ -20,10 +21,11 @@ export class CertificateController {
   constructor(
     private readonly emitUseCase: EmitCertificateUseCase,
     private readonly pdfService: PdfGeneratorService,
+    @Inject('ICertificateRepository')
     private readonly repo: ICertificateRepository,
     private readonly storage: StorageService,
     private readonly qrService: QrService,
-  ) {}
+  ) { }
 
   @Post('emit')
   async emit(
